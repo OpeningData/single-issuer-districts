@@ -38,7 +38,6 @@
         
 function  handleStepEnter(resp){
     console.log(resp.index)
-     console.log(resp.progress)
                          
         if (resp.index == 0 | resp.index == 1 ) {
                 
@@ -79,7 +78,7 @@ function  handleStepEnter(resp){
 				step: '#scrolly1 #article1 #step1',
 				offset: 0.66,
 				debug: false,
-                progress: true
+                progress: false
 			})
 				.onStepEnter(handleStepEnter)
 			// setup resize event
@@ -451,7 +450,6 @@ scattersvg.selectAll("#dot")
  function  handleStepEnter2(resp){
      
             console.log(resp.index)
-            console.log(resp.progress)
 
      if (resp.index == 0 ) {
          
@@ -565,9 +563,9 @@ scattersvg.selectAll("#dot")
 			// 3. bind scrollama event handlers (this can be chained like below)
 			scroller2.setup({
 				step: '#scrolly2 #article2 #step2',
-				offset: 0.54,
+				offset: 0.66,
 				debug: false,
-                progress: true
+                progress: false
 			})
 				.onStepEnter(handleStepEnter2)
 
@@ -741,7 +739,6 @@ scattersvg3.append("text")
 function  handleStepEnter3(resp){
      
             console.log(resp.index)
-            console.log(resp.progress)
     
     if (resp.index == 0 ) {
         d3.selectAll(".dot3").attr("fill", "black").attr("opacity", 0)
@@ -913,7 +910,7 @@ function init3() {
 			// 3. bind scrollama event handlers (this can be chained like below)
     scroller3.setup({
 				step: '#scrolly3 #article3 #step3',
-				offset: 0.54,
+				offset: 0.66,
 				debug: false,
                 progress: true
 			})
