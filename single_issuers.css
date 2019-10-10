@@ -1,0 +1,168 @@
+.scrolly {
+			position: relative;
+			background-color: #f3f3f3;
+			padding: 1rem;
+		}
+        
+		article {
+			position: relative;
+			padding: 0;
+			max-width: 45rem;
+			margin: 0 auto;
+		}
+
+		figure {
+			position: -webkit-sticky;
+			position: sticky;
+			left: 25%;
+			width: 50%;
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-color: none ;
+            overflow: hidden;
+            text-align: center;
+		}
+        
+        #extramap {
+            
+			position: relative;
+			left: 6%;
+			width: 88%;
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-color: none;
+            overflow: hidden;
+            text-align: center; 
+            
+            
+        }
+        
+        
+        
+                
+        #extramap2 {
+            
+			position: relative;
+			left: 6%;
+			width: 88%;
+			margin: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			background-color: none;
+            overflow: hidden;
+            text-align: center; 
+            
+            
+        }
+        
+        figure svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -moz-transform: translate(-50%, -50%);
+         -webkit-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+            }
+
+        
+		figure p {
+			text-align: center;
+			padding: 1rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-moz-transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			font-size: 8rem;
+			font-weight: 900;
+			color: #fff;
+		}
+        
+		.step {
+			margin: 0 auto 
+                35rem auto;
+			color: #3b3b3b;
+			background-color: rgba(0,0,0,0)
+            
+		}
+        
+		.step:last-child {
+			margin-bottom: 50;
+		}
+
+        
+		.step p {
+			text-align: center;
+			padding: 1rem;
+			font-size: 1.3rem;
+			background-color: #000;
+            color: #FCFCFC;
+            opacity: .7;
+		}
+        
+        .countiesbasic {
+            fill:none;
+            stroke: #000;
+            stroke-linejoin: round;
+            stroke-width: .25;
+            position: relative;
+            width: 100%;
+            }
+
+           d {
+            stroke: #000;
+            stroke-linejoin: round;
+            stroke-width: .5;
+            position: relative;
+            width: 100%;
+            }
+        
+        .states {
+            fill: none;
+            stroke: #fff;
+            stroke-linejoin: round;
+            }
+        
+        
+        #tooltip {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: auto;
+            visibility: hidden;
+            font-size: 10px;
+            background-color: #d6ecef;
+            padding: 10px;
+            box-shadow: 3px 3px 3px #cccccc;
+            border-radius: 3px;
+            text-align: left;
+            opacity: 0.85;
+            border-radius: 7.5px;
+        }
+         
+        h3 { color: #000}
+        
+        strong  {
+            color:#000
+                }
+
+        #xaxis {
+           -moz-transform: translate(5%, 95%);
+         -webkit-transform: translate(5%, 95%);
+         transform: translate(5%, 95%);
+            
+        }
+                    
+        #yaxis {
+            
+           -moz-transform: translate(5%, 95%);
+         -webkit-transform: translate(5%, 95%);
+         transform: translate(5%, 95%);
+            }
+        

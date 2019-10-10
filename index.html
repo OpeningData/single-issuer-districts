@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Single Issuer Districts</title>
+	<meta name="description" content="Single Issuer Districts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type = "text/css" href="main.css"/>
+    <link rel="stylesheet" type="text/css" href="single_issuers.css"/>
+    
+<script src= "https://d3js.org/d3.v5.js"> </script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://d3js.org/d3-queue.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.js"></script>
+<script src="https://unpkg.com/scrollama"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+    
+    
+
+
+
+
+<body>
+         
+   
+   	<!-- Header -->
+	<header id="header" style="background-color: rgb(252,252,252);">
+		<!-- <img src="./images/logo.png" style="height: 70%; width:auto; margin-top: 20%" alt=""> </a> -->
+		<a href="index.html" class="logo" style="color: #1c1c1c;"><strong>Opening Data</strong> - Making Open Data Accessible</a>
+		<!-- <nav>
+					<a href="#menu">Menu</a>
+				</nav> -->
+	</header>
+    
+	   <section id="main">
+        <div class="inner">
+				<header>
+					<h1 style="color: black;">The Issue with Single Issuer Districts </h1>
+					<p class="info">October 10, 2019 <a href="github.com/sapowers"> Sam Powers </a></p>
+				</header>
+               
+               
+        <section>     
+           <center><h3> Who Offers Care?  </h3> </center> 
+            <p>
+               The state of the American healthcare system <a href = "https://www.nytimes.com/2019/06/28/health/democratic-debate-healthcare.html"> took center stage </a> during the Democratic primary debates of the last few months. Questions of whether privatized healthcare should be abolished in favor of a single government plan and or if affordable healthcare must be governmnet-administered <a href = "https://www.reuters.com/article/us-usa-election-healthcare-factbox/where-the-top-democratic-us-presidential-candidates-stand-on-medicare-for-all-idUSKCN1VV13A"> differentiate the candidates</a>. Public, private, a mix of both, the dynamics and proposals are complicated. But how does who offers healthcare affect how people can access it? To  contextualize this debate, we analyzed offerings of the current government-facilitated healthcare system created through the Affordable Care Act under the Obama Administration that took effect in 2014.         
+            </p>
+        
+            <p> First, some background. The Affordable Care Act (ACA) created state-run health insurance marketplaces where individuals and small groups of individuals could purchase health insurace from American private insurance companies without needing sponsorship from an employer. You work part time and do not have health benefits from your employer? No problem. You can go to <a href = "https://www.healthcare.gov"> healthcare.gov </a>  and purchase a plan with guarenteed minimum coverage standards from a company that operates in your area. This is different from the Medicare and Medicaid programs. They subsidized health insurance they provide for qualified individuals is administered by the government and not private companies.          
+            </p>
+            
+             <p> <center> <strong> The ACA allowed any citizen to purchase private health insurance with minimum coverage</strong>    </center>
+            </p>
+                  
+            <p> Under this system, individual states must attract private insurance companies to offer plans on the state-wide open marketplace. National, regional, and local issures can offer plans on a state market as long as there are physicians in the area who will accept the insurance. Within states, plan offerings are further restricted to Rating Areas – collections of counties that comprise a healthcare network. So hypothetically, a person living in Southern California may have access to one set of plans operated by the ficticious company HealthWorks while and individual in Northern California could access different plans operated by HealthWorks since the company cooperates with different physicians in different parts of the state. In fact, the plans available can vary significantly between county to county. Using public data curated by the <a href = "https://hixcompare.org/" > Robert Wood Johnson Foundation </a> we analyze the variations in plans available to individual consumers and the implications of those differences. 
+            </p>
+        
+            <p>
+                <center> <h3> Glossary </h3></center>
+                <strong>Issuer:</strong> A company that offers health insurance <br>
+                <strong>Rating Area:</strong> A collection of counties or zip codes that all have the same plans and care networks<br>
+                <strong>Plan:</strong> A unique set of healthcare benefits offered at a specific premium and deductible in a specific rating area. We have eliminated Cost-Sharing Reduction plans which are copies of other plans offered at lower cost to individuals in certain income brackets. <br>
+                <strong>Premium:</strong> The price per month to own insurance. In these analyses, we utilize premiums offered to single 27 year olds. <br>
+                <strong> Deductible:</strong> An threshold of money that, once paid by the patient, affects how the insurer will cover the rest of the care. Oftentimes, the patient pays either a substantially reduced or no fee above the deductible.  
+                
+            
+            
+            
+            </p>
+            
+            
+            <p>
+                <center> <h3>Scroll through slowly to explore more </h3></center>      
+            </p>
+            
+            
+            
+        </section>
+         
+ </div>
+	
+           
+           
+           
+           
+           
+        </section>	
+    
+	<main  id = 'main1'>
+        
+        
+        
+        
+        
+		<section class='scrolly' id = 'scrolly1'>
+            
+            <figure id ='figure1'>
+				
+                
+                
+                
+			</figure>
+            
+
+			<article id = 'article1'>
+				<div class='step' id = 'step1' data-step='1'>
+					<p> Each county offers a number of ACA plans. They range in price from basic catastrophic plans to expensive platinum coverage. </p>
+				</div>
+                
+                <div class='step' id = 'step1' data-step='2'>
+					<p> Some counties offer plans than others. <br> The darker the blue, the more plans available  </p>
+				</div> 
+                
+                   <div class='step' id = 'step1' data-step='3'>
+					<p> In New York, for instance, the median county has upwards of 200 offerings, while Nebraska counties average around 9.   </p>
+				</div> 
+                
+                <div class='step' id = 'step1' data-step='4'>
+					<p> The overall median is 30 per county. Which seems plentiful.<br> But when we dig deeper, there may not be all that much choice. </p>
+				</div> 
+                
+                   <div class='step' id = 'step1' data-step='5'>
+					<p> In each of these red counties, a single company operates all available plans. Ocassionally, companies hold monopolies over entire states.  
+                       </p>
+			
+                </div>
+                
+             <div class='step' id = 'step1' data-step='6'>
+					<p> These are the so-called <b> Single Issuer Districts</b>. 
+                       </p>
+			
+                </div>
+                
+
+
+			</article>
+
+			
+		</section>
+        
+        
+            
+            
+ <section id="main">
+        <div class="inner" >
+               
+        <h3  ><center>Explore Your County </center></h3> 
+            
+  	<center> <div id="tooltip2", z = "100">
+		 <span id= "countyname" style = "font-size: 14px" ></span> 
+		 <span id="plans" style = "font-size: 14px"></span> 
+         <span id="issuers" style = "font-size: 14px"></span> 
+
+    </div> 
+        </center>
+                
+        <div id ='extramap'>
+            
+
+            
+            
+		</div>
+        
+
+     
+        </div>
+
+</section>
+        
+<section id = "main">
+    
+    <div class = "inner">
+        <center> <h3>Why is This Important? </h3></center>
+    
+     <p>
+    Privatized healthcare systems rely on capitalism and competition. With a single company controlling all available plans, residents cannot put economic pressure on the issuer to adjust its offerings. Keep scrolling to see how this plays out. But first, another definition:
+    </p>  
+       
+    <p>
+  <strong>Silver Plan:</strong> A health insurance plan with a medium amount of coverage. They all offer relatively equivalent benefits and address most healthcare needs. They are the most common choice for Market place shoppers and are the plan level that the government provides to qualified individuals at reduced cost-sharing. Read more at <a href = 'https://www.healthcare.gov/glossary/silver-health-plan/'> Healthcare.gov</a>
+    </p> 
+        
+
+    </div> 
+        
+</section>    
+        
+        
+        
+        
+        
+</main>
+    
+
+    
+<main id = 'main2'>
+    
+		<section class='scrolly' id = 'scrolly2'>
+
+			<figure id ='figure2'>
+				
+                
+			</figure>
+
+            
+			<article id = 'article2'>
+                
+				<div class='step' id = 'step2' datastep='1'>
+                    <p>Each dot is a county. Each is positioned at the <b> mimimum monthly premiums </b> ($) that a 27 year old can pay for a Silver Plan in that county</p>
+				</div>
+                
+                <div class='step' id = 'step2' data-step='2'>
+					<p>When we break the counties apart by issuers, we see that counties with less competition tend to have higher minimum prices for the same care</p>
+				</div>
+				<div class='step' id = 'step2' data-step='3'>
+					<p> <b>Median</b> Premium in County</p>
+				</div>
+				<div class='step' id = 'step2' data-step='4'>
+					<p><b>Maximum</b> Premium in County </p>
+				</div>
+                
+                <div class='step' id = 'step2' data-step='4'>
+					<p> We can see that counties with fewer issuers still offer just as expensive care. But they lack the more affordable options </p>
+				</div>
+
+               <div class='step' id = 'step2' data-step='5'>
+					<p>Looking at <b>Miminum Premiums </b>in the <b> Southern USA</b>, <br> we see the trend more pronounced </p>
+				</div>
+                
+                  <div class='step' id = 'step2' data-step='6'>
+					<p>The same is true in the <b>Western USA </b></p>
+				</div>
+                
+			</article>
+
+			
+		</section>
+        
+        
+        
+            
+<section id="main">
+        <div class="inner">
+            <center><h3> But What About the Care Itself?</h3></center>
+            <p>
+         So, now we know. Individuals who live in counties with fewer issuers, specifically in Single Issuer Districts, often do not have access to as affordable coverage as individuals who live across county lines. But if it costs more to access coverage, are there any differences in accessible benefits?
+        </p>
+   
+        </div>
+ </section>
+    
+    
+	</main>
+  
+    
+   
+<main id = 'main3'>
+    
+		<section class='scrolly' id = 'scrolly3'>
+			<figure id ='figure3'>
+				
+                
+			</figure>
+
+            
+			<article id = 'article3'>
+                
+				<div class='step' id = 'step3' datastep='1'>
+<center><h3> Pretend you are a single 27-year old. <br> <br> You have an accident. You need emergency care. <br> <br>Like many Americans, you have a Silver Plan. </h3>		 </center>		
+                </div>
+                
+                <div class='step' id = 'step3' data-step='2'>
+					<p> These are all the onces you could have</p>
+				</div>
+				<div class='step' id = 'step3' data-step='3'>
+					<p> 88% of them require you to pay the entire  <br> ER bill until you hit your deductible</p>
+				</div>
+				<div class='step' id = 'step3' data-step='4'>
+					<p> And if you live in South Carolina, you did not get a choice<br>   when you bought your Silver Plan. You will pay the full deductible. </p>
+				</div>
+
+               <div class='step' id = 'step3' data-step='5'>
+					<p> In 46.3% of Silver plans, the deductible is over $4000. <br>
+                   Assuming you receive care that is in your network.</p>
+				</div>
+                
+                  <div class='step' id = 'step3' data-step='6'>
+					<p> Why does this matter?</p>
+				</div>
+                
+                <div class='step' id = 'step3' data-step='7'>
+					<p> These are all the counties that offer plans in rating areas* </p>
+				</div>
+                
+                
+               <div class='step' id = 'step3' data-step='8'>
+					<p> 61.4% of them are like South Carolina. No plans offer <br> benefits  before the deductible. That is very high.</p>
+				</div>
+                
+             <div class='step' id = 'step3' data-step='9'>
+					<p>But it is even higher (79%) for Single-Issuer Districts</p>
+				</div>
+               
+			</article>
+
+			
+		</section>
+    
+    
+                
+<section id="main">
+        <div class="inner">
+            <center><h3> Beyond Premium</h3></center>
+            <p>
+         The lack of competition affects not just the cost of acquiring coverage, it affects what your coverage will actually pay for and your ability to choose what you would like it to cover. Whatever healthcare plan is offered to America next, if it is to center on creating equity in healthcare access, it must make an effort to reduce disparities in coverage options that result simply from residence. This election cycle, lets use data to keep our officials accountable, tranforming healthcare for all into <strong>equal</strong> care for all.
+        </p>
+   
+        </div>
+    
+ </section>
+                
+ <section id="main">
+        <div class="inner" >
+               
+        <h3  ><center>See Your County's Full Report Card </center></h3> 
+            
+  	<center> <div id="tooltip3", z = "100">
+         <span id= "countyname" style = "font-size: 14px" ></span> <br>
+		 <span id="choices" style = "font-size: 14px"></span>  <br>
+        <span id="OMchoices" style = "font-size: 14px"></span> <br>
+
+         <span id="deduct" style = "font-size: 14px"></span> 
+
+    </div> 
+        </center>
+                
+        <div id ='extramap2'>
+            
+
+            
+            
+		</div>
+        
+
+     
+        </div>
+    </section>
+    
+    
+    
+    
+    
+</main>
+    
+    
+    
+	<!-- Footer -->
+	<footer id="footer">
+
+		<div class="copyright">
+			Opening Data, Original Design: <a href="https://templated.co">TEMPLATED</a>
+		</div>
+	</footer>
+
+ 
+    <script src="single_issuers.js"></script>
+
+<script>
+    init3();
+    </script>
+</body>
+    
+</html>
