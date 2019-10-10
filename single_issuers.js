@@ -77,7 +77,7 @@ function  handleStepEnter(resp){
 			// 3. bind scrollama event handlers (this can be chained like below)
 			scroller.setup({
 				step: '#scrolly1 #article1 #step1',
-				offset: 0.33,
+				offset: 0.66,
 				debug: false,
                 progress: true
 			})
