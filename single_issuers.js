@@ -418,8 +418,19 @@ d3.csv("county_facts.csv")
             ])
     .range([ 0, width*.9 ]);
   scattersvg.append("g")
-    .attr("transform", "translate(" +width*.05 + "," + .95*height + ")")
+    .attr("transform", "translate(" +width*.06 + "," + .91*height + ")")
     .call(d3.axisBottom(x));
+           
+    scattersvg.append("text")             
+      .attr("transform",
+            "translate(" + (width*.55) + " ," + 
+                           (height *.98) + ")")
+      .style("text-anchor", "middle")
+       .style("font-size", 24)
+      .text("Minimum Monthly Premium ($)")
+           .attr("id", "xtext")
+           
+
 
  y = d3.scaleLinear()
     .domain([0, 
@@ -428,14 +439,15 @@ d3.csv("county_facts.csv")
     .range([  height*.9, 0 ]);
 
 
-scattersvg.selectAll("#dot")
+scattersvg.append("g")
+    .attr("transform", "translate(" +width*.06 + "," + .01*height + ")")
+.selectAll("#dot")
     .data(response)
   .enter()
   .append("circle")
   .attr("cx", function(d) { return x( +d.Min_PREMI27)})
  .attr("cy", function(d) { return y(Math.random() + .25)})
    .attr("r", 5)
-.attr("transform", "translate(" +width*.05 + "," + .05*height + ")")
         .attr("opacity", .1)
     .attr("class", "dot")
     .attr("id", function(d) { return d.Region})
@@ -454,7 +466,8 @@ scattersvg.selectAll("#dot")
      if (resp.index == 0 ) {
          
         scattersvg.selectAll("#yax").remove()
-     
+        scattersvg.selectAll("#ytext").remove()
+         
          d3.selectAll(".dot")
         .data(countyfacts)
         .transition()
@@ -464,23 +477,44 @@ scattersvg.selectAll("#dot")
      else if (resp.index == 1 ) {
            
         scattersvg.append("g")
-            .call(d3.axisLeft(y))
-            .attr("transform", "translate(" +width*.05 + "," + .05*height + ")")
+         .attr("transform", "translate(" +width*.06 + "," + .01*height + ")")
+
+      .call(d3.axisLeft(y))
            .attr("id", "yax");
   
+    scattersvg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 1)
+      .attr("x",0 - (height*.45))
+      .attr("dy", "1em")
+         .attr("font-size", 24)
+      .style("text-anchor", "middle")
+      .text("Issuers")
+         .attr("id", "ytext");      
+
+         
+             d3.selectAll("#xtext").text("Minimum Monthly Premium ($)")
+     
+         
          d3.selectAll(".dot")
              .data(countyfacts)
              .transition()
              .attr("cx", function(d) { return x( d.Min_PREMI27) })
             .attr("cy", function(d) { return y( d.count_issuers) })
         }
+     
+
                    
     else if (resp.index == 2) {
                
         d3.selectAll(".dot")
             .data(countyfacts)
             .transition()
-            .attr("cx", function(d) { return x( d.Med_PREMI27) })        
+            .attr("cx", function(d) { return x( d.Med_PREMI27) })    
+        
+        d3.selectAll("#xtext").text("Median Monthly Premium ($)")
+
+        
      }
      
     else if (resp.index == 3) {
@@ -490,7 +524,10 @@ scattersvg.selectAll("#dot")
             .transition()
             .attr("cx", function(d) { return x( d.Max_PREMI27) })
             .attr("fill", "black")
-            .attr("opacity", .1)           
+            .attr("opacity", .1)   
+        
+    d3.selectAll("#xtext").text("Maximum Monthly Premium ($)")
+
      }
      
        else if (resp.index == 4) {
@@ -500,7 +537,10 @@ scattersvg.selectAll("#dot")
             .transition()
             .attr("cx", function(d) { return x( d.Max_PREMI27) })
             .attr("fill", "black")
-            .attr("opacity", .1)           
+            .attr("opacity", .1)     
+               d3.selectAll("#xtext").text("Maximum Monthly Premium ($)")
+
+           
      }
      
      
@@ -516,6 +556,9 @@ scattersvg.selectAll("#dot")
              .attr("fill", "red")
              .attr("opacity", 1)
              .attr("z-index", 10)     
+         
+             d3.selectAll("#xtext").text("Minimum Monthly Premium ($)")
+
      }
      
      
@@ -529,11 +572,7 @@ scattersvg.selectAll("#dot")
              .attr("cx", function(d) { return x( d.Min_PREMI27) })
              .attr("cy", function(d) { return y( d.count_issuers) })
 
-          
-         scattersvg.append("g")
-            .call(d3.axisLeft(y))
-             .attr("transform", "translate(" +width*.05 + "," + .05*height + ")")
-             .attr("id", "yax");
+
         
          d3.selectAll("#West")
              .transition()
