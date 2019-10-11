@@ -23,6 +23,7 @@
 			background-color: none ;
             overflow: hidden;
             text-align: center;
+            z-index: -1;
 		}
         
         #extramap {
