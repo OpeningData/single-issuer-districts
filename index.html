@@ -214,7 +214,7 @@
 			<article id = 'article2'>
                 
 				<div class='step' id = 'step2' datastep='1'>
-                    <p>Each dot is a county. Each is positioned at the <b> mimimum monthly premiums </b> ($) that a 27 year old can pay for a Silver Plan in that county</p>
+                    <p>Each dot represents a county. Each is positioned at the <b> Mimimum  </b> monthly premium  a 27 year old can pay for a Silver Plan in that county</p>
 				</div>
                 
                 <div class='step' id = 'step2' data-step='2'>
@@ -297,16 +297,16 @@
 				</div>
                 
                 <div class='step' id = 'step3' data-step='7'>
-					<p> These are all the counties that offer plans in rating areas* </p>
+					<p> These are all the counties you could be in. </p>
 				</div>
                 
                 
                <div class='step' id = 'step3' data-step='8'>
-					<p> 61.4% of them are like South Carolina. No plans offer <br> benefits  before the deductible. That is very high.</p>
+					<p> 61.4% of them are like South Carolina. No plans operating <br> in them cover any costs before the deductible. </p>
 				</div>
                 
              <div class='step' id = 'step3' data-step='9'>
-					<p>But it is even higher (79%) for Single-Issuer Districts</p>
+					<p>But that percentage is even higher (79%) for Single-Issuer Districts</p>
 				</div>
                
 			</article>
@@ -330,7 +330,7 @@
  <section id="main">
         <div class="inner" >
                
-        <h3  ><center>See Your County's Full Report Card </center></h3> 
+        <h3  ><center>See Your County's Report Card </center></h3> 
             
   	<center> <div id="tooltip3", z = "100">
          <span id= "countyname" style = "font-size: 14px" ></span> <br>
@@ -359,6 +359,65 @@
     
     
 </main>
+    
+    
+<section id = 'main'>
+    <div class = "scrolly"> 
+            <div class="inner" >
+                 <center> <h1 style="color: black;">How Did We Put This Together?</h1> </center>             
+
+                 <h3>The Data:</h3>
+                <p >
+                    The data for this analyses was compiled by the <a href = "https://www.rwjf.org/" > Robert Wood Johnson Foundation </a> as part of their <a href = "https://hixcompare.org/"> HIX Compare Initiative </a>. We specifically utilized the 2019 data included in the <a href = "https://hixcompare.org/individual-markets.html"> Individual Market </a> files.       
+                </p> 
+                
+                 <p>
+                <strong> Number of Plans and Issuers: </strong> The HIX Compare set compiles a list of issuers and plans that operate in each county in the United States. In it, a unique plan is defined as a  set of benefits offered at a given premium and available in a specific Rating Area. Cost Sharing Reduction variants (plans that are offered to certain groups based on income level) and Child-Only plans (plans marketed to specifically cover children), do not qualify as unique plans within the HIX compare set. Additionally, only plans that are actively marketed through the state website were considered in this analysis. Issuers and number of plans were linked to counties using the State FIPS code, a unique 5-digit code that relates to a specific US county. 
+                </p>
+                
+                <p>
+                 <strong>Counties: </strong> Rating areas vary significantly between states. For example, Florida has 67, almost one per county, while New Hampshire only has one. So we settled on counties as the most basic unit of our analysis since they are one of the more uniform geographic units between states. That said, since rating areas can be a bit weird and do not always line up with counties, we, on occassion, had to count a county twice. Alaska, for example, has a few counties where half of the county can access one set of plans and the other half can only a distinctly different set. Why is it not uniform? States have the right to decide how they want to regulate healthcare. So, sometimes that is just the way things settle out.               
+                </p>
+                
+                <p>
+                <strong>Silver Plans:</strong> When analyzing the cost of silver plans, we used the same definition as HIX Compare. We removed CSR and Child-Only variants. We limited some analyses only to silver plans in order to improve comparability between plans, counties, and states. Plans at different metal levels are very different from eachother. And, given that individuals who qualify for financial relief only receive it if they purchase a Silver Plan, it is the most reasonable plan type to analyze. 
+                </p>
+                
+                
+                
+
+                <p> <strong>Premiums: </strong> Premiums are calibrated to the individual who purchases the plan. Do you have a family? Are you elderly? These are questions that can change your premium cost. The HIX compare includes a few values, but we chose to  base this story around a single 27-year old to streamline some of the calculations. That said, all of the benefit structures are the same no matter your demographics. 
+                           </p>
+                
+                <p>
+                <strong> In Network/Out-of-Network & Coverage Tiers: </strong> For this analysis, we tried to be as generous to insurance companies as possible to avoid pointing fingers where there is no blame. All insurance companies have different benefits based on whether your doctor is considered in or out of network. All calculations were based on the assumption that the patient received in network care. Unfortunately, in emergency situations, this does not always occur. Additionally, some plans further differentiate in network providers into tier 1 (preferred) and tier 2 (non-preffered) providers. Again, we assumed the best and looked at how a company would treat a patient who reached a preferred provider. 
+                </p>
+                
+                <h3>Statistics Jargon of the Day:</h3>
+
+                <p>
+                    <strong>Median:</strong> If you line up a set of numbers in ascending order, the median is the number physically in the middle. Why do we use medians to describe premiums in this piece? Well, we want to tell you that 50% of people are paying more than that amount and 50% of people are paying less than that amount. Sometimes people like to use <i>means</i> (fancy name for <i>average</i>) to describe the middle of a data set. But, unfortunately, very large numbers and very small numbers can bias the mean. In this case, some people pay an exhorbitant amount for their care. 
+                    
+                </p>
+                
+                
+                <h3>Future Work:</h3>
+
+                <p>
+                    We are working to analyze more benefits to add to the county report card. If there is a benefit type that is important to you, let us know and we will take a look at where that care is offered. 
+                </p>
+                
+                
+                <p>
+                    
+                    <strong> Questions? Comments? Contact us at:  </strong> <a href = "mailto:OpeningDataBlog@gmail.com" > OpeningDataBlog@gmail.com </a> 
+                
+                </p>
+                
+            </div> 
+    </div>
+</section>
+    
     
     
     
