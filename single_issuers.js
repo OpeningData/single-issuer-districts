@@ -503,9 +503,22 @@ scattersvg.append("g")
             .attr("cy", function(d) { return y( d.count_issuers) })
         }
      
+       else if (resp.index == 2) {
+         
+        d3.selectAll(".dot")
+            .data(countyfacts)
+            .transition()
+            .attr("cx", function(d) { return x( d.Min_PREMI27) })
+            .attr("fill", "black")
+            .attr("opacity", .1)     
+               d3.selectAll("#xtext").text("Minimum Monthly Premium ($)")
 
+           
+       }
                    
-    else if (resp.index == 2) {
+     
+     
+    else if (resp.index == 3) {
                
         d3.selectAll(".dot")
             .data(countyfacts)
@@ -517,7 +530,7 @@ scattersvg.append("g")
         
      }
      
-    else if (resp.index == 3) {
+    else if (resp.index == 4) {
          
         d3.selectAll(".dot")
             .data(countyfacts)
@@ -530,19 +543,7 @@ scattersvg.append("g")
 
      }
      
-       else if (resp.index == 4) {
-         
-        d3.selectAll(".dot")
-            .data(countyfacts)
-            .transition()
-            .attr("cx", function(d) { return x( d.Max_PREMI27) })
-            .attr("fill", "black")
-            .attr("opacity", .1)     
-               d3.selectAll("#xtext").text("Maximum Monthly Premium ($)")
 
-           
-     }
-     
      
      else if (resp.index == 5) { 
      
@@ -801,16 +802,14 @@ function  handleStepEnter3(resp){
         d3.selectAll(".dot3").attr("opacity", .1)
         d3.selectAll(".greaterthan4000").attr("opacity", .7)       
      }
-     
-       
+            
      else if (resp.index == 5) { 
          d3.selectAll(".dot3").attr("opacity", .1)
          d3.selectAll(".greaterthan4000").attr("opacity", .7)
          d3.selectAll("#FullDeductible").attr("fill", "red")
          d3.selectAll(".dot4").attr("opacity", 0)  
      }
-     
-     
+          
     else if (resp.index == 6) { 
         d3.selectAll(".dot3").attr("opacity", 0)
         d3.selectAll(".dot4").attr("fill", "black").attr("opacity", .7)
