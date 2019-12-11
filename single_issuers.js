@@ -518,34 +518,34 @@ scattersvg.append("g")
                    
      
      
-    else if (resp.index == 3) {
+//    else if (resp.index == 3) {
                
-        d3.selectAll(".dot")
-            .data(countyfacts)
-            .transition()
-            .attr("cx", function(d) { return x( d.Med_PREMI27) })    
+//        d3.selectAll(".dot")
+//            .data(countyfacts)
+//            .transition()
+//            .attr("cx", function(d) { return x( d.Med_PREMI27) })    
         
-        d3.selectAll("#xtext").text("Median Monthly Premium ($)")
+//        d3.selectAll("#xtext").text("Median Monthly Premium ($)")
 
         
-     }
+//     }
      
-    else if (resp.index == 4) {
+//    else if (resp.index == 4) {
          
-        d3.selectAll(".dot")
-            .data(countyfacts)
-            .transition()
-            .attr("cx", function(d) { return x( d.Max_PREMI27) })
-            .attr("fill", "black")
-            .attr("opacity", .1)   
+//        d3.selectAll(".dot")
+//            .data(countyfacts)
+//            .transition()
+//            .attr("cx", function(d) { return x( d.Max_PREMI27) })
+//            .attr("fill", "black")
+//            .attr("opacity", .1)   
         
-    d3.selectAll("#xtext").text("Maximum Monthly Premium ($)")
+//    d3.selectAll("#xtext").text("Maximum Monthly Premium ($)")
 
-     }
-     
+ //    }
+//     
 
      
-     else if (resp.index == 5) { 
+     else if (resp.index == 3) { 
      
          d3.selectAll(".dot")
              .attr("opacity", .01)
@@ -563,7 +563,7 @@ scattersvg.append("g")
      }
      
      
-     else if (resp.index == 6) { 
+     else if (resp.index == 4) { 
      
          d3.selectAll(".dot")
              .attr("opacity", .01)
